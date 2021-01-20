@@ -160,7 +160,7 @@ const path = [
   {
     id: 1,
     nome: "Categorias",
-    url: "/Categorias",
+    url: "/categorias",
   },
   {
     id: 2,
@@ -395,7 +395,7 @@ export default function Dashboard({ children }) {
               {path.map((path, index) => (
                 <ListItem
                   button
-                  onClick={() => history.push(`${path.url}`)}
+                  onClick={() => router.push(`${path.url}`)}
                   key={path.id}
                   className={classes.nested}
                 >
