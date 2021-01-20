@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import MaterialDatatable from "material-datatable";
 import Dashboard from "../../src/components/DashBoard/dashboard";
 
@@ -99,26 +100,52 @@ const options = {
   selectableRows: true,
   usePaperPlaceholder: false,
   filterType: "multiselect",
-
   rowsPerPage: 10,
-  //searchText: "22",
   componentWillReceiveProps: true,
   page: 0,
   sortColumnIndex: 2,
   sortColumnDirection: "desc",
-  //filterList: [[], [], ["Location 2"], [], [], [], []],
-
-  //onTableChange: (action, state) => this.onChange(state),
-
-  onRowClick: (rowObject, rowMeta) => {
-    console.log(rowMeta);
+  textLabels: {
+    body: {
+      noMatch: "Desculpa, não foi encontrado nenhum registro",
+      toolTip: "Sort",
+    },
+    pagination: {
+      next: "Next Page",
+      previous: "Previous Page",
+      rowsPerPage: "Rows per page:",
+      displayRows: "of",
+    },
+    toolbar: {
+      search: "Search",
+      downloadCsv: "Download CSV",
+      print: "Print",
+      viewColumns: "View Columns",
+      filterTable: "Filter Table",
+    },
+    filter: {
+      all: "All",
+      title: "FILTERS",
+      reset: "RESET",
+    },
+    viewColumns: {
+      title: "Show Columns",
+      titleAria: "Show/Hide Table Columns",
+    },
+    selectedRows: {
+      text: "rows(s) selected",
+      delete: "Delete",
+      deleteAria: "Delete Selected Rows",
+    },
   },
+
+  onRowClick: (rowObject, rowMeta) => {},
 };
 
 export default function Categorias() {
-  options.row;
   return (
     <Dashboard>
+      <Button>Cadastrar</Button>
       <MaterialDatatable
         title={"ACME Employee list"}
         data={data}
