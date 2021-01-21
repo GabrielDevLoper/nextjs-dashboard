@@ -31,6 +31,7 @@ import { Switch } from "@material-ui/core";
 import { useRouter } from "next/router";
 
 import useDarkMode from "use-dark-mode";
+import { useSpring, animated } from "react-spring";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -183,6 +184,8 @@ export default function Dashboard({ children }) {
   const classes = useStyles();
   const theme = useTheme();
   const router = useRouter();
+
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   const { value: isDark, toggle: toggleDarkMode } = useDarkMode();
 
@@ -428,7 +431,7 @@ export default function Dashboard({ children }) {
       >
         <div className={classes.drawerHeader} />
         {/* Menu central da aplicação */}
-        {children}
+        <animated.div style={props}>{children}</animated.div>
       </main>
     </div>
   );
