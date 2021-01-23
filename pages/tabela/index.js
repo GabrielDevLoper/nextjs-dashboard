@@ -151,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     display: "flex",
-    overflow: "auto",
+
     flexDirection: "column",
   },
   fixedHeight: {
@@ -161,7 +161,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Categorias() {
   const classes = useStyles();
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const fixedHeightPaper = clsx(classes.paper);
   return (
     <Dashboard>
       <Grid item xs={12} md={8} lg={12}>
