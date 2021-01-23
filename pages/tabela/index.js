@@ -1,4 +1,5 @@
-import { Button } from "@material-ui/core";
+import { Button, Grid, makeStyles, Paper } from "@material-ui/core";
+import clsx from "clsx";
 import MaterialDatatable from "material-datatable";
 import Dashboard from "../../src/components/DashBoard/dashboard";
 
@@ -142,16 +143,37 @@ const options = {
   onRowClick: (rowObject, rowMeta) => {},
 };
 
+const useStyles = makeStyles((theme) => ({
+  container: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
+  },
+  paper: {
+    padding: theme.spacing(2),
+    display: "flex",
+    overflow: "auto",
+    flexDirection: "column",
+  },
+  fixedHeight: {
+    height: 500,
+  },
+}));
+
 export default function Categorias() {
+  const classes = useStyles();
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   return (
     <Dashboard>
-      <Button>Cadastrar</Button>
-      <MaterialDatatable
-        title={"ACME Employee list"}
-        data={data}
-        columns={columns}
-        options={options}
-      />
+      <Grid item xs={12} md={8} lg={12}>
+        <Paper className={fixedHeightPaper}>
+          <MaterialDatatable
+            title={"ACME Employee list"}
+            data={data}
+            columns={columns}
+            options={options}
+          />
+        </Paper>
+      </Grid>
     </Dashboard>
   );
 }

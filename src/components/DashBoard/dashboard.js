@@ -160,8 +160,8 @@ const useStyles = makeStyles((theme) => ({
 const path = [
   {
     id: 1,
-    nome: "Categorias",
-    url: "/categorias",
+    nome: "Tabela de exemplo",
+    url: "/tabela",
   },
   {
     id: 2,

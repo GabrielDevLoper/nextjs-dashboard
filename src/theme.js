@@ -23,14 +23,11 @@ export const darkTheme = createMuiTheme({
   palette: {
     type: "dark",
     primary: {
-      dark: colors.indigo.A700,
       main: "#282c34",
-      light: colors.indigo.A200,
     },
+
     secondary: {
-      dark: colors.orange.A700,
       main: "#ff1744",
-      light: colors.orange.A200,
     },
     background: {
       default: "#1c2025",
@@ -48,14 +45,13 @@ export const lightTheme = createMuiTheme({
   palette: {
     type: "light",
     primary: {
-      dark: colors.indigo.A700,
       main: "#3d5afe",
-      light: colors.indigo.A200,
     },
     secondary: {
-      dark: colors.orange.A700,
       main: "#ff1744",
-      light: colors.orange.A200,
+    },
+    neutral: {
+      main: "#834bff",
     },
     background: {
       default: colors.common.white,
