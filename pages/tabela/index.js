@@ -1,7 +1,15 @@
-import { Button, Grid, makeStyles, Paper } from "@material-ui/core";
+import {
+  Button,
+  Container,
+  Fab,
+  Grid,
+  makeStyles,
+  Paper,
+} from "@material-ui/core";
 import clsx from "clsx";
 import MaterialDatatable from "material-datatable";
 import Dashboard from "../../src/components/DashBoard/dashboard";
+import EditIcon from "@material-ui/icons/Edit";
 
 const columns = [
   {
@@ -35,18 +43,8 @@ const columns = [
     },
   },
   {
-    name: "Age",
-    field: "age",
-    options: {
-      width: 50,
-      headerNoWrap: true,
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: "Salary",
-    field: "salary",
+    name: "Editar",
+    field: "editar",
     options: {
       width: 50,
       headerNoWrap: true,
@@ -61,36 +59,27 @@ const data = [
     name: "Name 1",
     title: "Title 1",
     location: "Location 1",
-    age: 30,
-    salary: 10,
+    editar: "ok",
   },
   {
     name: "Name 2",
     title: "Title 2",
     location: "Location 2",
-    age: 31,
-    salary: 11,
   },
   {
     name: "Name 1",
     title: "Title 1",
     location: "Location 1",
-    age: 30,
-    salary: 10,
   },
   {
     name: "Name 2",
     title: "Title 2",
     location: "Location 2",
-    age: 31,
-    salary: 11,
   },
   {
     name: "Name 1",
     title: "Title 1",
     location: "Location 1",
-    age: 30,
-    salary: 10,
   },
 ];
 
@@ -161,19 +150,22 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Categorias() {
   const classes = useStyles();
+
   const fixedHeightPaper = clsx(classes.paper);
   return (
     <Dashboard>
-      <Grid item xs={12} md={8} lg={12}>
-        <Paper className={fixedHeightPaper}>
-          <MaterialDatatable
-            title={"ACME Employee list"}
-            data={data}
-            columns={columns}
-            options={options}
-          />
-        </Paper>
-      </Grid>
+      <Container>
+        <Grid item xs={12} md={8} lg={12}>
+          <Paper className={fixedHeightPaper}>
+            <MaterialDatatable
+              title={"ACME Employee list"}
+              data={data}
+              columns={columns}
+              options={options}
+            />
+          </Paper>
+        </Grid>
+      </Container>
     </Dashboard>
   );
 }
